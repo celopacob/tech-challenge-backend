@@ -1,4 +1,4 @@
-@baseUrl=http://localhost:8080/genres
+@baseUrl=http://localhost:8080/movies
 @id={{create.response.body.id}}
 
 # @name getAll
@@ -11,7 +11,10 @@ POST {{baseUrl}}
 Content-Type: application/json
 
 {
-  "name": "jose-{{$guid}}"
+  "name": "jose-{{$guid}}",
+  "synopsis": "Movie synopsis (Optional)",
+  "releasedAt": "0000-00-00",
+  "runtime": 1234 
 }
 ###
 
@@ -24,16 +27,14 @@ GET {{baseUrl}}/{{id}}
 PUT {{baseUrl}}/{{id}}
 
 {
-  "name": "potato-{{$guid}}"
+  "name": "potato-{{$guid}}",
+  "synopsis": "Movie synopsis (Optional)",
+  "releasedAt": "0000-00-00",
+  "runtime": 1234 
 }
 ###
 
 # @name remove
 DELETE {{baseUrl}}/{{id}}
-
-###
-
-# @name getActors
-GET {{baseUrl}}/{{id}}/actors
 
 ###
